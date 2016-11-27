@@ -1,0 +1,40 @@
+.home-container {
+    height: 60%;
+    min-width: 200px;
+    max-width: 500px;
+    padding: 10px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    line-height: 1;
+}
+#home-logo {
+    font-weight: 700;
+    color: #282828;
+}
+#home-logo h1 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+#home-logo span {
+    color: #006bff;
+}
+#home-logo .sub-home-logo {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.button-wrapper {
+    margin-top: 30px;
+}
+.button-wrapper .btn-md {
+    width: 150px;  
+    text-transform: uppercase;  
+    margin-bottom: 5px;
+}
+.button-separator {
+    margin-top: 10px;
+    height: 27px;
+    text-transform: uppercase;
+    color: #282828;
+    font-weight: bold;
+}

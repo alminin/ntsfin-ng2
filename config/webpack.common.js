@@ -20,7 +20,7 @@ const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: '"NTSFin - financial analysis and reporting app',
   description: 'NTS Consulting corporate financial analysis and reporting app',
-  baseUrl: './',
+  baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
 

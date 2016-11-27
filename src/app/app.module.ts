@@ -9,14 +9,22 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
  * Platform and Environment providers/directives/pipes
  */
 import { ENV_PROVIDERS } from './environment';
-import { routing } from './app.routing';
 
 // App is our top level component
-import { App } from './app.component';
+import { AppComponent } from './app.component';
 import { AppState, InteralStateType } from './app.service';
 import { GlobalState } from './global.state';
-import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+// import { NgaModule } from './theme/nga.module'; //TODO
+
+// Feature modules
+import { CoreModule } from './core/core.module';
+import { HomeModule } from './home/home.module';
+import { LoginModule } from './pages/login/login.module';
+
+// Routing Module
+import { AppRoutingModule } from './app-routing.module';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -34,9 +42,9 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [App],
+  bootstrap: [AppComponent],
   declarations: [
-    App
+    AppComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -44,9 +52,12 @@ type StoreType = {
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgaModule.forRoot(),
     PagesModule,
-    routing
+    HomeModule,
+    CoreModule,
+    LoginModule,
+    // NgaModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

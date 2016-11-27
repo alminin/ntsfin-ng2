@@ -12,24 +12,15 @@ import { BaThemeConfig } from './theme/theme.config';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('normalize.css'), require('./app.scss')],
-  template: `
-    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
-      <div class="additional-bg"></div>
-      <router-outlet></router-outlet>
-    </main>
-  `
+  styleUrls: ['../../node_modules/normalize.css/normalize.css', './app.scss'],
+  templateUrl: 'app.component.html'
 })
-export class App {
+export class AppComponent {
 
   isMenuCollapsed: boolean = false;
 
-  constructor(private _state: GlobalState,
-              private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner,
-              private _config:BaThemeConfig) {
-
-    this._loadImages();
+  // TODO add spinner service
+  constructor(private _state: GlobalState) {
 
     this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
       this.isMenuCollapsed = isCollapsed;
@@ -37,14 +28,7 @@ export class App {
   }
 
   public ngAfterViewInit(): void {
-    // hide spinner once all loaders are completed
-    BaThemePreloader.load().then((values) => {
-      this._spinner.hide();
-    });
-  }
-
-  private _loadImages(): void {
-    // register some loaders
-    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+    // TODO hide spinner once all loaders are completed
+    console.log('spinner was hiden');
   }
 }

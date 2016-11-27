@@ -1,0 +1,12 @@
+@import '../../theme/sass/conf/conf';
+
+@media (max-width: $resXS) {
+  .al-footer {
+    padding-left: 0;
+  }
+  .al-footer-home {
+    padding-left: 0;
+    height: 76px;
+    text-align: center;
+  }
+}

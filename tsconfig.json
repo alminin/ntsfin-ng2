@@ -21,7 +21,10 @@
       "node",
       "source-map",
       "uglify-js",
-      "webpack"
+      "webpack",
+      "jasmine",
+      "protractor",
+      "selenium-webdriver"
     ]
   },
   "exclude": [
